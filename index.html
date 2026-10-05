@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noctro Labs — Apps, made with obsessive care</title>
+  <meta name="description" content="Noctro Labs is a boutique app studio in the UK. Makers of Slabd, the card collecting app, and Nestwise, the family organiser, with more launches through 2027.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://noctro.co.uk/">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://noctro.co.uk/">
+  <meta property="og:title" content="Noctro Labs — Apps, made with obsessive care">
+  <meta property="og:description" content="Makers of Slabd and Nestwise. A small studio with more launches through 2027.">
+  <meta property="og:image" content="https://noctro.co.uk/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Noctro Labs: Apps, made with obsessive care. Slabd and Nestwise shown on iPhones.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Noctro Labs",
+    "url": "https://noctro.co.uk",
+    "logo": "https://noctro.co.uk/assets/logo.svg",
+    "email": "hello@noctro.co.uk"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --tile: #111113;
+      --line: rgba(255, 255, 255, .1);
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --faint: #6e6e73;
+      --gold: #d9b876;
+      --blue: #4f8bff;
+      --grad: linear-gradient(90deg, #d9b876 0%, #ff9f5a 35%, #3fd0b8 68%, #4f8bff 100%);
+      --wrap: 1200px;
+      /* SF Pro on Apple devices; Inter everywhere else. */
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 52px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 400 17px/1.5 var(--font);
+      letter-spacing: -.011em;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+    h1, h2, h3, p { margin: 0; }
+    .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: fixed; inset: 0 0 auto; z-index: 20; height: 52px;
+      background: rgba(0, 0, 0, .72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
+    .brand img { width: 24px; height: 24px; }
+    .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; font-size: 13px; }
+    .nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+    .nav ul a:hover { color: var(--text); }
+    @media (max-width: 560px) { .nav ul li:not(:last-child) { display: none; } }
+
+    /* ---------- Phone ---------- */
+    .phone {
+      position: relative; flex: none;
+      width: 280px; aspect-ratio: 1206 / 2622;
+      border-radius: 48px; padding: 10px;
+      background: linear-gradient(145deg, #3a3a3c, #121214 40%, #2c2c2e);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 50px 120px rgba(0,0,0,.7);
+    }
+    .phone .screen { position: relative; width: 100%; height: 100%; border-radius: 39px; overflow: hidden; background: #000; }
+    .phone .screen::before { /* Dynamic Island */
+      content: ""; position: absolute; z-index: 2; top: 11px; left: 50%; transform: translateX(-50%);
+      width: 31%; height: 26px; border-radius: 20px; background: #000;
+    }
+    .phone .shot { width: 100%; height: 100%; object-fit: cover; }
+    /* Launch-style screen, used until real screenshots are dropped in as <img class="shot">. */
+    .splash { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+    .splash img { width: 38%; border-radius: 23%; box-shadow: 0 24px 60px rgba(0,0,0,.55); }
+    .splash b { font-size: 22px; font-weight: 600; letter-spacing: -.02em; }
+    .splash span { font-size: 13px; color: rgba(255,255,255,.6); margin-top: -12px; }
+    .splash.slabd { background: radial-gradient(120% 70% at 50% 30%, #2b2416, #0b0b0c 70%); }
+    .splash.slabd b { color: #ecd9a8; }
+    .splash.nestwise { background: radial-gradient(120% 70% at 50% 30%, #1f45b8, #0a1338 75%); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 132px 0 0; text-align: center; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+      width: 1100px; height: 760px; pointer-events: none;
+      background:
+        radial-gradient(closest-side at 35% 60%, rgba(217,184,118,.20), transparent),
+        radial-gradient(closest-side at 65% 55%, rgba(79,139,255,.24), transparent);
+      filter: blur(20px);
+    }
+    .eyebrow { font-size: 17px; font-weight: 600; color: var(--muted); }
+    .hero h1 {
+      font-size: clamp(46px, 8vw, 104px); line-height: 1.02; letter-spacing: -.045em; font-weight: 700;
+      max-width: 980px; margin: 12px auto 0;
+    }
+    .hero .sub { color: var(--muted); font-size: clamp(19px, 2vw, 23px); line-height: 1.4; max-width: 640px; margin: 22px auto 0; letter-spacing: -.015em; }
+    .ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 12px 24px; border-radius: 999px;
+      font-size: 17px; font-weight: 500; text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-fill { background: var(--text); color: #000; }
+    .btn-fill:hover { background: #fff; }
+    .btn-link { color: var(--blue); padding-left: 10px; padding-right: 10px; }
+    .btn-link:hover { text-decoration: underline; }
+
+    .stage {
+      position: relative; display: flex; justify-content: center; align-items: flex-start;
+      gap: clamp(20px, 5vw, 72px); margin-top: 80px; height: clamp(420px, 46vw, 580px);
+    }
+    .stage .phone { width: clamp(190px, 23vw, 290px); }
+    .stage .phone.left { transform: rotate(-4deg); margin-top: 60px; }
+    .stage .phone.raised { transform: rotate(3deg); }
+    .stage { /* Fade the phones into the page so they sit "in" it */
+      -webkit-mask-image: linear-gradient(#000 55%, transparent 96%);
+              mask-image: linear-gradient(#000 55%, transparent 96%);
+    }
+    @media (max-width: 640px) {
+      .stage { height: 380px; gap: 14px; }
+      .stage .phone { width: 44vw; }
+    }
+
+    /* ---------- Studio statement ---------- */
+    .studio { padding: 120px 0 140px; }
+    .statement {
+      font-size: clamp(40px, 6.6vw, 92px); line-height: 1; letter-spacing: -.05em; font-weight: 700;
+      max-width: 1100px;
+    }
+    .statement span { color: #48484a; }
+    .studio .row {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px;
+      margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--line);
+    }
+    .studio .row p { color: var(--muted); font-size: 21px; line-height: 1.45; max-width: 560px; }
+    .studio .row p b { color: var(--text); font-weight: 600; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+    .facts div { font-size: 14px; color: var(--muted); }
+    .facts b { display: block; color: var(--text); font-size: 28px; letter-spacing: -.03em; font-weight: 600; margin-bottom: 2px; }
+    @media (max-width: 800px) { .studio .row { grid-template-columns: 1fr; } }
+
+    /* ---------- App panels ---------- */
+    .apps { display: grid; gap: 20px; }
+    .panel {
+      position: relative; overflow: hidden; border-radius: 32px;
+      display: grid; grid-template-columns: 1.05fr 1fr;
+      min-height: 640px; padding: 72px 0 0 72px;
+    }
+    .panel .copy { align-self: center; padding-bottom: 72px; max-width: 480px; }
+    .panel .icon { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+    .panel .cat { margin-top: 28px; font-size: 15px; font-weight: 600; }
+    .panel h3 { font-size: clamp(48px, 6vw, 72px); line-height: 1; letter-spacing: -.045em; font-weight: 700; margin-top: 6px; }
+    .panel .lead { font-size: clamp(22px, 2.3vw, 28px); line-height: 1.2; letter-spacing: -.025em; font-weight: 600; margin-top: 14px; }
+    .panel .desc { color: rgba(255,255,255,.66); margin-top: 18px; font-size: 17px; }
+    .chips { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips li { font-size: 13px; font-weight: 500; padding: 6px 13px; border-radius: 999px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.8); }
+    .panel .more { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; }
+    .panel .more a.sm { color: rgba(255,255,255,.6); font-size: 15px; }
+    .panel .more a { font-weight: 500; text-decoration: none; }
+    .panel .more a:hover { text-decoration: underline; }
+    .panel .more .soon { color: rgba(255,255,255,.5); font-size: 15px; }
+    .panel .art { position: relative; }
+    .panel .art .phone { position: absolute; left: 50%; top: 0; width: 290px; transform: translateX(-50%); }
+    .panel .art:has(.back) .phone:not(.back) { left: 38%; }
+    .panel .art .phone.back { left: 66%; top: 70px; transform: translateX(-50%) rotate(5deg); filter: brightness(.6); }
+
+    .panel.slabd { background: radial-gradient(90% 80% at 85% 20%, #2a2213, #0e0d0b 60%); }
+    .panel.slabd .cat, .panel.slabd .more a { color: var(--gold); }
+    .panel.slabd .lead { color: #ecd9a8; }
+    .panel.nestwise { background: radial-gradient(80% 80% at 90% 10%, #2a63ff, transparent 60%), radial-gradient(70% 70% at 0% 100%, rgba(63,208,184,.35), transparent 60%), #0b1640; }
+    .panel.nestwise .cat { color: #7fe3d2; }
+
+    @media (max-width: 900px) {
+      .panel { grid-template-columns: 1fr; padding: 44px 28px 0; min-height: 0; }
+      .panel .copy { padding-bottom: 40px; }
+      .panel .art { height: 400px; }
+      .panel .art .phone { width: 230px; }
+      .panel .art .phone.back { display: none; }
+      .panel .art:has(.back) .phone:not(.back) { left: 50%; }
+    }
+    @media (max-width: 600px) { .panel { padding: 36px 22px 0; border-radius: 26px; } }
+
+    /* ---------- Bento: 2027 ---------- */
+    .section-head { padding: 140px 0 48px; }
+    .section-head h2 { font-size: clamp(40px, 6vw, 80px); line-height: 1.02; letter-spacing: -.045em; font-weight: 700; }
+    .section-head p { color: var(--muted); font-size: 21px; max-width: 620px; margin-top: 18px; }
+    .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 210px; gap: 16px; }
+    .tile {
+      border-radius: 28px; padding: 28px; background: var(--tile); border: 1px solid var(--line);
+      display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative;
+      text-decoration: none;
+    }
+    .tile .k { font-size: 14px; color: var(--muted); font-weight: 500; }
+    .tile .v { font-size: 26px; font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
+    .tile.big { grid-column: span 2; grid-row: span 2; background: #0c0c0e; }
+    .tile.big .v { font-size: clamp(40px, 4.6vw, 64px); line-height: .98; letter-spacing: -.05em; font-weight: 700; }
+    .tile.big::after {
+      content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%;
+      background: conic-gradient(from 200deg, #d9b876, #ff9f5a, #3fd0b8, #4f8bff, #d9b876); filter: blur(70px); opacity: .35;
+    }
+    .tile.big > * { position: relative; z-index: 1; }
+    .tile.app { flex-direction: row; align-items: center; justify-content: flex-start; gap: 18px; transition: transform .3s; }
+    .tile.app:hover { transform: translateY(-3px); }
+    .tile.app img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+    .tile.app .k { margin-top: 4px; }
+    .tile.app.s { background: linear-gradient(135deg, #1d1810, #0e0d0b); }
+    .tile.app.n { background: linear-gradient(135deg, #16307f, #0b1640); }
+    .tile.lab { background: transparent; border: 1.5px dashed rgba(255,255,255,.18); }
+    .tile.lab .bar { height: 26px; border-radius: 8px; width: 70%; background: linear-gradient(90deg, #1c1c1e, #2c2c2e, #1c1c1e); background-size: 200% 100%; animation: shimmer 2.6s linear infinite; }
+    .tile.lab .bar + .k { margin-top: 10px; }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: minmax(170px, auto); }
+      .tile.big { grid-row: span 1; min-height: 300px; }
+      .tile.app { grid-column: span 2; }
+    }
+    @media (max-width: 520px) {
+      .bento { grid-template-columns: 1fr; }
+      .tile.big, .tile.app { grid-column: span 1; }
+    }
+
+    /* ---------- Contact ---------- */
+    .contact { text-align: center; padding: 160px 0 150px; }
+    .contact h2 { font-size: clamp(48px, 8vw, 104px); line-height: 1; letter-spacing: -.05em; font-weight: 700; }
+    .contact p { color: var(--muted); font-size: 21px; margin-top: 18px; }
+    .contact .mail {
+      display: inline-block; margin-top: 34px; text-decoration: none;
+      font-size: clamp(20px, 3vw, 30px); font-weight: 600; letter-spacing: -.03em;
+      padding: 16px 32px; border-radius: 999px; border: 1px solid var(--line);
+      transition: border-color .2s, background .2s;
+    }
+    .contact .mail:hover { border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.04); }
+
+    footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--faint); font-size: 12px; }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    footer a { text-decoration: none; color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    /* ---------- Motion ---------- */
+    .js .reveal { opacity: 0; translate: 0 28px; transition: opacity 1s ease, translate 1s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.in { opacity: 1; translate: 0 0; }
+    .js .reveal.d1 { transition-delay: .08s; } .js .reveal.d2 { transition-delay: .16s; } .js .reveal.d3 { transition-delay: .24s; }
+    .js .stage .phone { opacity: 0; translate: 0 80px; transition: opacity 1.2s ease, translate 1.4s cubic-bezier(.2,.7,.2,1); }
+    .js .stage.in .phone { opacity: 1; translate: 0 0; }
+    .js .stage.in .phone + .phone { transition-delay: .14s; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal, .js .stage .phone { opacity: 1; translate: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Noctro Labs home">
+        <img src="assets/logo.svg" alt="" width="24" height="24">Noctro Labs
+      </a>
+      <ul>
+        <li><a href="#slabd">Slabd</a></li>
+        <li><a href="#nestwise">Nestwise</a></li>
+        <li><a href="#next">2027</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow reveal">Noctro Labs</p>
+        <h1 class="reveal d1">Apps, made with <span class="grad">obsessive&nbsp;care.</span></h1>
+        <p class="sub reveal d2">We're a small studio making apps for iPhone. Slabd and Nestwise are our first two, and more will launch throughout 2027.</p>
+        <div class="ctas reveal d3">
+          <a class="btn btn-fill" href="#slabd">Explore our apps</a>
+          <a class="btn btn-link" href="#next">See what's next ›</a>
+        </div>
+        <div class="stage" id="stage">
+          <div class="phone left">
+            <div class="screen"><img class="shot" src="assets/shots/slabd-card.jpg" alt="Slabd showing a graded Stone Cold Steve Austin card in its slab"></div>
+          </div>
+          <div class="phone raised">
+            <div class="screen"><img class="shot" src="assets/shots/nestwise-home.jpg" alt="Nestwise home screen showing who's where and a family map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio -->
+    <section class="studio">
+      <div class="wrap">
+        <h2 class="statement reveal">We make a few apps <span>and make them properly.</span></h2>
+        <div class="row reveal d1">
+          <p><b>Noctro Labs is a boutique app studio in the UK.</b> Each app does one job well. We build for iPhone in Swift, follow Apple's design guidelines, collect only the data an app needs, and keep improving it long after launch.</p>
+          <div class="facts">
+            <div><b>2</b>Apps so far</div>
+            <div><b>iPhone</b>Native Swift &amp; SwiftUI</div>
+            <div><b>UK</b>Independent studio</div>
+            <div><b>2027</b>New launches all year</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <section>
+      <div class="wrap apps">
+        <article class="panel slabd reveal" id="slabd">
+          <div class="copy">
+            <img class="icon" src="assets/slabd.png" alt="Slabd app icon" width="84" height="84" loading="lazy">
+            <p class="cat">Card collecting</p>
+            <h3>Slabd</h3>
+            <p class="lead">A vault for your collection.</p>
+            <p class="desc">Catalogue every card, track what you paid and what it's worth now, and see your profit and loss across breaks and sealed wax. You can print slab labels with QR codes that let anyone verify a card.</p>
+            <ul class="chips">
+              <li>Collection vault</li><li>Profit &amp; loss</li><li>Breaks &amp; wax</li><li>Want list</li><li>QR-verified labels</li>
+            </ul>
+            <div class="more"><a href="https://slabd.app" rel="noopener">Visit slabd.app ›</a><a class="sm" href="mailto:slabd@noctro.co.uk">Support</a><a class="sm" href="https://slabd.app/privacy" rel="noopener">Privacy</a></div>
+          </div>
+          <div class="art">
+            <div class="phone back"><div class="screen"><img class="shot" src="assets/shots/slabd-breaks.jpg" alt="" loading="lazy"></div></div>
+            <div class="phone"><div class="screen"><img class="shot" src="assets/shots/slabd-vault.jpg" alt="Slabd vault summary with collection value and profit and loss" loading="lazy"></div></div>
+          </div>
+        </article>
+
+        <article class="panel nestwise reveal" id="nestwise">
+          <div class="copy">
+            <img class="icon" src="assets/nestwise.png" alt="Nestwise app icon" width="84" height="84" loading="lazy">
+            <p class="cat">Family organiser</p>
+            <h3>Nestwise</h3>
+            <p class="lead">Your whole household in one place.</p>
+            <p class="desc">A shared calendar, chores and pocket money, family chat, and arrival alerts. Everyone sees the same plan, children earn as they help out, and parents keep control of the money.</p>
+            <ul class="chips">
+              <li>Shared calendar</li><li>Chores</li><li>Pocket money</li><li>Family chat</li><li>Places &amp; alerts</li>
+            </ul>
+            <div class="more"><span class="soon">Coming soon to the App Store</span><a class="sm" href="/nestwise/support/">Support</a><a class="sm" href="/nestwise/privacy/">Privacy</a></div>
+          </div>
+          <div class="art">
+            <div class="phone back"><div class="screen"><img class="shot" src="assets/shots/nestwise-calendar.jpg" alt="" loading="lazy"></div></div>
+            <div class="phone"><div class="screen"><img class="shot" src="assets/shots/nestwise-money.jpg" alt="Nestwise pocket money for a child, with chores and weekly money adding up" loading="lazy"></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2027 -->
+    <section id="next">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="reveal">More in the lab.</h2>
+          <p class="reveal d1">Slabd and Nestwise are just the start. Several more apps are in development and will launch throughout 2027.</p>
+        </div>
+        <div class="bento">
+          <div class="tile big reveal">
+            <span class="k">The plan</span>
+            <span class="v">A steady run of new apps through <span class="grad">2027.</span></span>
+          </div>
+          <a class="tile app s reveal d1" href="#slabd">
+            <img src="assets/slabd.png" alt="">
+            <div><div class="v">Slabd</div><div class="k">Out now</div></div>
+          </a>
+          <a class="tile app n reveal d2" href="#nestwise">
+            <img src="assets/nestwise.png" alt="">
+            <div><div class="v">Nestwise</div><div class="k">Coming soon</div></div>
+          </a>
+          <div class="tile lab reveal">
+            <span class="k">2027</span>
+            <div><div class="bar"></div><div class="k">In the lab</div></div>
+          </div>
+          <div class="tile lab reveal d1">
+            <span class="k">2027</span>
+            <div><div class="bar" style="width:55%"></div><div class="k">In the lab</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2 class="reveal">Say hello.</h2>
+        <p class="reveal d1">Press, partnerships, support or feedback.</p>
+        <a class="mail reveal d2" href="mailto:hello@noctro.co.uk">hello@noctro.co.uk</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Copyright © <span id="year">2026</span> Noctro Labs. All rights reserved.</div>
+      <nav>
+        <a href="https://slabd.app/privacy" rel="noopener">Slabd privacy</a>
+        <a href="/nestwise/support/">Nestwise support</a>
+        <a href="/nestwise/privacy/">Nestwise privacy</a>
+        <a href="mailto:hello@noctro.co.uk">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver(entries => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal, #stage').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
