@@ -4,25 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found — Noctro Labs</title>
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/doc.css">
   <style>
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 16px;
-      background: radial-gradient(800px 500px at 50% 30%, rgba(123,140,255,.12), transparent 60%), #07080d;
-      color: #eceae4; font: 17px/1.6 "Inter", -apple-system, system-ui, sans-serif; }
-    img { width: 64px; height: 64px; margin: 0 auto 28px; display: block; }
-    h1 { font: 400 clamp(40px, 8vw, 72px)/1 "Instrument Serif", Georgia, serif; margin: 0; }
-    h1 em { color: #f3e6c8; }
-    p { color: #9a9cab; margin: 16px 0 32px; }
-    a { display: inline-block; padding: 12px 22px; border-radius: 999px; background: #f3e6c8; color: #12131a; text-decoration: none; font-weight: 500; font-size: 15px; }
+    .lost { min-height: calc(100vh - 52px); display: grid; place-items: center; text-align: center; padding: 48px 16px; }
+    .lost h1 { margin: 0; font-size: clamp(48px, 9vw, 96px); }
+    .lost .grad { background: linear-gradient(90deg, #d9b876, #ff9f5a 35%, #3fd0b8 68%, #4f8bff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lost p { color: var(--muted); font-size: 21px; margin-top: 16px; }
   </style>
 </head>
 <body>
-  <main>
-    <img src="/assets/logo.svg" alt="">
-    <h1>Lost in the <em>dark</em>.</h1>
-    <p>That page doesn't exist, or it's still in the lab.</p>
-    <a href="/">Back to Noctro Labs</a>
-  </main>
+  <header class="nav">
+    <div class="in">
+      <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="24" height="24">Noctro Labs</a>
+    </div>
+  </header>
+  <div class="lost">
+    <div>
+      <h1>Page <span class="grad">not found.</span></h1>
+      <p>That page doesn't exist, or it's still in the lab.</p>
+      <a class="mail" href="/">Back to Noctro Labs</a>
+    </div>
+  </div>
 </body>
 </html>
